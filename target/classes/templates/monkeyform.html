@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Mini-SurveyMonkey</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1></h1>
+<ol id="destination">
+
+</ol>
+
+<h2>Mini-SurveyMonkey</h2>
+<form action="" method="post">
+    <div>
+        <p>What is your first name?</p>
+        <input type="text" id="name"/>
+    </div>
+
+    <div>
+        <p>What is your age range?</p>
+
+        <div>
+            <input type="radio" name="age" id="0-10" value="0-10"/>
+            <label for="0-10">0-10</label>
+        </div>
+
+        <div>
+            <input type="radio" name="age" id="11-20" values="11-20"/>
+            <label for="11-20">11-20</label>
+        </div>
+
+        <div>
+            <input type="radio" name="age" id="21-30" value="21-30"/>
+            <label for="21-30">21-30</label>
+        </div>
+
+        <div>
+            <input type="radio" name="age" id="31-40" value="31-40"/>
+            <label for="31-40">31-40</label>
+        </div>
+
+        <div>
+            <input type="radio" name="age" id="41+" value="41+"/>
+            <label for="41+">41+</label>
+        </div>
+
+    </div>
+
+    <div>
+        <p>What type of credit card do you have?</p>
+
+        <div>
+            <input type="checkbox" name="card" id="visa" value="visa"/>
+            <label for="visa">Visa</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="card" id="mastercard" values="mastercard"/>
+            <label for="mastercard">Mastercard</label>
+        </div>
+
+        <div>
+            <input type="checkbox" name="card" id="american" value="american"/>
+            <label for="american">American Express</label>
+        </div>
+        <div>
+            <input type="checkbox" name="card" id="debit" value="debit"/>
+            <label for="debit">Debit</label>
+        </div>
+    </div>
+
+    <div>
+        <p>What continent are you from?</p>
+
+        <div>
+            <input type="radio" name="continent" id="north" value="north"/>
+            <label for="north">North America</label>
+        </div>
+
+        <div>
+            <input type="radio" name="continent" id="south" value="south"/>
+            <label for="south">South America</label>
+        </div>
+
+        <div>
+            <input type="radio" name="continent" id="africa" value="africa"/>
+            <label for="africa">Africa</label>
+        </div>
+
+        <div>
+            <input type="radio" name="continent" id="asia" value="asia"/>
+            <label for="asia">Asia</label>
+        </div>
+
+        <div>
+            <input type="radio" name="continent" id="australia" value="australia"/>
+            <label for="australia">Australia</label>
+        </div>
+
+        <div>
+            <input type="radio" name="continent" id="europe" value="europe"/>
+            <label for="europe">Europe</label>
+        </div>
+
+        <div>
+            <input type="radio" name="continent" id="antarctica" value="antarctica"/>
+            <label for="antarctica">Antarctica</label>
+        </div>
+    </div>
+
+    <p><input onclick="addItem()" type="submit" value="Submit Survey"/></p>
+</form>
+
+</body>
+</html>
