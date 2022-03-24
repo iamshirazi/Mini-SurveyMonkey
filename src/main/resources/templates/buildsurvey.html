@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Mini-SurveyMonkey</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="public/process.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="main1">
+        <h2>How many questions do you want in your survey?</h2>
+        <input id="num" type="number" min="0" max="4">
+
+        <script>
+            var questions = document.getElementById(num);
+            setNum(questions.value);
+        </script>
+
+        <a href="questions.html">
+            <input type="submit" value="Submit">
+        </a>
+    </div>
+</body>
+</html>

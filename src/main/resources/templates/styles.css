@@ -1,0 +1,9 @@
+body {
+    background-image: url("img/backgroundLight.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: yellow;
+}
