@@ -1,3 +1,5 @@
+package minisurveymonkey.accessingdatajpa;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -57,6 +59,6 @@ public class Question {
 
     @Override
     public String toString() {
-        return String.format("ID[id=%d, Question='%s', Question Type='%s']", questionID, question, questionType);
+        return String.format("ID[id=%d, minisurveymonkey.accessingdatajpa.Question='%s', minisurveymonkey.accessingdatajpa.Question Type='%s']", questionID, question, questionType);
     }
 }

@@ -3,17 +3,21 @@
 <head>
     <title>Mini-SurveyMonkey</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="public/process.js"></script>
+    <script src="update.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <h2>Mini-SurveyMonkey</h2>
 
+    <ol id="destination">
+
+    </ol>
+
     <form action="" method="post" id="form">
         <div>
             <p>What is your question?</p>
-            <input type="text" id="q1"/>
+            <input type="text" id="quest"/>
         </div>
 
         <div id = "main">
@@ -37,7 +41,7 @@
 
         <!-- OPTIONS SECTION -->
 
-        <div hidden="true" id="bob">
+        <div hidden="true" id="options">
             <p>How many options for this question?</p>
 
             <div>
@@ -80,7 +84,7 @@
 
         </div>
 
-        <p><input onclick="postData()" type="submit" value="Submit Survey"/></p>
+        <p><input onclick="postData()" type="submit" value="Add Question"/></p>
     </form>
 </body>
 </html>

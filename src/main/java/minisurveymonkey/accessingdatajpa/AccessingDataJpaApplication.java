@@ -1,3 +1,5 @@
+package minisurveymonkey.accessingdatajpa;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -34,13 +36,13 @@ public class AccessingDataJpaApplication {
 
             // fetch an individual question by ID
             Question question = repository.findById(1L);
-            log.info("Question found with findById(1L):");
+            log.info("minisurveymonkey.accessingdatajpa.Question found with findById(1L):");
             log.info("--------------------------------");
             log.info(question.toString());
             log.info("");
 
-            // fetch Question by name
-            log.info("Question found with findByQuestion('What is your favourite colour?'):");
+            // fetch minisurveymonkey.accessingdatajpa.Question by name
+            log.info("minisurveymonkey.accessingdatajpa.Question found with findByQuestion('What is your favourite colour?'):");
             log.info("--------------------------------------------");
             repository.findByQuestion("What is your favourite colour?").forEach(question1 -> {
                 log.info(question1.toString());
