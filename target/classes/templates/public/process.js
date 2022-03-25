@@ -79,11 +79,11 @@ function setNum(num) {
 }
 
 function hide() {
-    document.getElementById('bob').style.display = "none";
+    document.getElementById('options').style.display = "none";
 }
 
 function unHide() {
-    document.getElementById('bob').style.display = "block";
+    document.getElementById('options').style.display = "block";
 }
 
 function setOptionNum(val) {

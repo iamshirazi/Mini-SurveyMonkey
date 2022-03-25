@@ -3,84 +3,90 @@
 <head>
     <title>Mini-SurveyMonkey</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script src="public/process.js"></script>
+    <script src="update.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h2>Mini-SurveyMonkey</h2>
+<h2>Mini-SurveyMonkey</h2>
 
-    <form action="" method="post" id="form">
+<ol id="destination">
+
+</ol>
+
+<form action="" th:action = "@{/questions}" th:object= "${questions}" method="post" id="form" onsubmit = "return false">
+    <div>
+        <p>What is your question?</p>
+        <input type="text" th:field = "*{question}" id="quest"/>
+    </div>
+
+    <div id = "main">
+        <p>What is the type of question?</p>
+
         <div>
-            <p>What is your question?</p>
-            <input type="text" id="q1"/>
+            <input onclick="unHide()" type="radio" name="type" th:field = "*{questionType}" id="rad" value="rad"/>
+            <label for="rad">Radio Buttons</label>
         </div>
 
-        <div id = "main">
-            <p>What is the type of question?</p>
-
-            <div>
-                <input onclick="unHide()" type="radio" name="type" id="rad" value="rad"/>
-                <label for="rad">Radio Buttons</label>
-            </div>
-
-            <div>
-                <input onclick="hide()" type="radio" name="type" id="txt" value="txt"/>
-                <label for="txt">Text box</label>
-            </div>
-
-            <div>
-                <input onclick="unHide()" type="radio" name="type" id="check" value="check"/>
-                <label for="check">Check Box</label>
-            </div>
+        <div>
+            <input onclick="hide()" type="radio" name="type" th:field = "*{questionType}" id="txt" value="txt"/>
+            <label for="txt">Text box</label>
         </div>
 
-        <!-- OPTIONS SECTION -->
+        <div>
+            <input onclick="unHide()" type="radio" name="type"  th:field = "*{questionType}" id="check" value="check"/>
+            <label for="check">Check Box</label>
+        </div>
+    </div>
 
-        <div hidden="true" id="bob">
-            <p>How many options for this question?</p>
+    <!-- OPTIONS SECTION -->
 
-            <div>
-                <input onclick="setOptionNum('1')" type="radio" name="option" id="one" value="one"/>
-                <label for="one">1</label>
-            </div>
+    <div hidden="true" id="options">
+        <p>How many options for this question?</p>
 
-            <div>
-                <input onclick="setOptionNum('2')" type="radio" name="option" id="two" value="two"/>
-                <label for="two">2</label>
-            </div>
-
-            <div>
-                <input onclick="setOptionNum('3')" type="radio" name="option" id="three" value="three"/>
-                <label for="three">3</label>
-            </div>
-            <div>
-                <input onclick="setOptionNum('4')" type="radio" name="option" id="four" value="four"/>
-                <label for="four">4</label>
-            </div>
-            <div>
-                <input onclick="setOptionNum('5')" type="radio" name="option" id="five" value="five"/>
-                <label for="five">5</label>
-            </div>
-            <div>
-                <input onclick="setOptionNum('6')" type="radio" name="option" id="six" value="six"/>
-                <label for="six">6</label>
-            </div>
-            <div>
-                <input onclick="setOptionNum('7')" type="radio" name="option" id="seven" value="seven"/>
-                <label for="seven">7</label>
-            </div>
-            <div>
-                <input onclick="setOptionNum('8')" type="radio" name="option" id="eight" value="eight"/>
-                <label for="eight">8</label>
-            </div>
+        <div>
+            <input onclick="setOptionNum('1')" type="radio"  th:field= "*{options}" name="option" id="one" value="one"/>
+            <label for="one">1</label>
         </div>
 
-        <div id="optionSection">
-
+        <div>
+            <input onclick="setOptionNum('2')" type="radio" th:field= "*{options}" name="option" id="two" value="two"/>
+            <label for="two">2</label>
         </div>
 
-        <p><input onclick="postData()" type="submit" value="Submit Survey"/></p>
-    </form>
+        <div>
+            <input onclick="setOptionNum('3')" type="radio" th:field= "*{options}" name="option" id="three" value="three"/>
+            <label for="three">3</label>
+        </div>
+        <div>
+            <input onclick="setOptionNum('4')" type="radio" th:field= "*{options}" name="option" id="four" value="four"/>
+            <label for="four">4</label>
+        </div>
+        <div>
+            <input onclick="setOptionNum('5')" type="radio" th:field= "*{options}" name="option" id="five" value="five"/>
+            <label for="five">5</label>
+        </div>
+        <div>
+            <input onclick="setOptionNum('6')" type="radio" th:field= "*{options}" name="option" id="six" value="six"/>
+            <label for="six">6</label>
+        </div>
+        <div>
+            <input onclick="setOptionNum('7')" type="radio" th:field= "*{options}" name="option" id="seven" value="seven"/>
+            <label for="seven">7</label>
+        </div>
+        <div>
+            <input onclick="setOptionNum('8')" type="radio" th:field= "*{options}" name="option" id="eight" value="eight"/>
+            <label for="eight">8</label>
+        </div>
+
+
+    </div>
+
+    <div id="optionSection">
+
+    </div>
+
+    <p><input onclick="postData()" type="submit" value="Add Question"/></p>
+</form>
 </body>
 </html>
