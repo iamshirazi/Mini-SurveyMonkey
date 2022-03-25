@@ -1,3 +1,5 @@
+package minisurveymonkey.accessingdatajpa;
+
 import java.util.List;
 
 public interface QuestionService {
