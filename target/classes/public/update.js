@@ -1,3 +1,26 @@
+function addItem() {
+    var ordlist = document.getElementById('destination');
+    var quest = document.getElementById('quest');
+    var type = document.getElementsByName('type');
+    var option = document.getElementsByName('option');
+    var li = document.createElement('li');
+    li.setAttribute('quest', '${questions.quest}');
+    li.setAttribute('type', '${questions.type}');
+    li.setAttribute('option', '${questions.option}');
+    li.appendChild(document.createTextNode(question.value + ", "));
+    li.appendChild(document.createTextNode(questionType.value + ", "));
+    li.appendChild(document.createTextNode(options.value));
+    ordlist.appendChild(li);
+}
+
+$(function(){
+    $('a[href$="/questions"]').each(function(){
+        this.href = this.href.replace(/\/delete$/, "");
+        $(this).attr("data-method", "questions").attr("data-confrim", "Are you sure?");
+    });
+})
+
+/* --------- FROM PROCESS.JS -------- */
 
 var numberOfQuestions = 1;
 var options = [];
@@ -5,16 +28,7 @@ var options = [];
 function questionNum() {
 
     for (var i = 0; i < numberOfQuestions; i++) {
-    /*
-        var h21 = document.createElement('h2'); // What is the first question?
-        h21.textContent = "What is question number" + (i++) + "?";
-        var txt = document.createElement('INPUT') // textbox (QUESTION ASKED)
-        txt.setAttribute("type", "text");
-        var h22 = document.createElement('h2'); // h2 (What type of question?)
-        h22.textContent = "What type of question is it?";
-        var rad = document.createElement("INPUT"); //radio buttons (checkbox, radio, text)
-        rad.setAttribute("type", "radio");
-*/
+
         var tag = document.createElement('p');
         var text = document.createTextNode("What is question number " + i + "?");
         tag.appendChild(text);
@@ -42,24 +56,6 @@ function createStuff() {
     var radi = document.createElement('INPUT');
     var t
 
-    /*
-    var but = document.createElement('INPUT');
-    var number = parseInt(document.getElementById("num")); //// number is immediately set to NaN for some reason
-    but.setAttribute("type", "button");
-    but.setAttribute("onclick", 'askAgain(" ' +number+ ' ")');
-    but.setAttribute("value", "Enter");
-    element.appendChild(but);
-    */
-    //askAgain(number);
-    //<input id="num" type="number" min="0" max="4">
-    //var h2 = document.createElement("h2");
-    //h2.textContent = "How many options are there for your question?";
-                /*
-                document.write("<form action='' method='post'>
-                                <input id='num' type='number' min='0' max='4'>
-                                <input onclick='questionNum()' type='submit' value='Submit'>
-                                </form>");
-                */
 }
 
 function askAgain(num) {
