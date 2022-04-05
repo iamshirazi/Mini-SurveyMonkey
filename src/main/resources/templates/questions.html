@@ -14,7 +14,7 @@
 
 </ol>
 
-<form action="" method="post" id="form">
+<form action="" th:action = "@{/questions}" th:object= "${questions}" method="post" id="form" onsubmit = "return false">
     <div>
         <p>What is your question?</p>
         <input type="text" th:field = "*{question}" id="quest"/>
@@ -24,7 +24,7 @@
         <p>What is the type of question?</p>
 
         <div>
-            <input onclick="unHide()" type="radio" th:field = "*{questionType}" name="type" id="rad" value="rad"/>
+            <input onclick="unHide()" type="radio" name="type" th:field = "*{questionType}" id="rad" value="rad"/>
             <label for="rad">Radio Buttons</label>
         </div>
 
@@ -34,7 +34,7 @@
         </div>
 
         <div>
-            <input onclick="unHide()" type="radio" name="type" th:field = "*{questionType}" id="check" value="check"/>
+            <input onclick="unHide()" type="radio" name="type"  th:field = "*{questionType}" id="check" value="check"/>
             <label for="check">Check Box</label>
         </div>
     </div>
@@ -45,37 +45,37 @@
         <p>How many options for this question?</p>
 
         <div>
-            <input onclick="setOptionNum('1')" type="radio" th:field = "*{options}" name="option" id="one" value="one"/>
+            <input onclick="setOptionNum('1')" type="radio"  th:field= "*{options}" name="option" id="one" value="one"/>
             <label for="one">1</label>
         </div>
 
         <div>
-            <input onclick="setOptionNum('2')" type="radio" th:field = "*{options}" name="option" id="two" value="two"/>
+            <input onclick="setOptionNum('2')" type="radio" th:field= "*{options}" name="option" id="two" value="two"/>
             <label for="two">2</label>
         </div>
 
         <div>
-            <input onclick="setOptionNum('3')" type="radio" th:field = "*{options}" name="option" id="three" value="three"/>
+            <input onclick="setOptionNum('3')" type="radio" th:field= "*{options}" name="option" id="three" value="three"/>
             <label for="three">3</label>
         </div>
         <div>
-            <input onclick="setOptionNum('4')" type="radio" th:field = "*{options}" name="option" id="four" value="four"/>
+            <input onclick="setOptionNum('4')" type="radio" th:field= "*{options}" name="option" id="four" value="four"/>
             <label for="four">4</label>
         </div>
         <div>
-            <input onclick="setOptionNum('5')" type="radio" th:field = "*{options}" name="option" id="five" value="five"/>
+            <input onclick="setOptionNum('5')" type="radio" th:field= "*{options}" name="option" id="five" value="five"/>
             <label for="five">5</label>
         </div>
         <div>
-            <input onclick="setOptionNum('6')" type="radio" th:field = "*{options}" name="option" id="six" value="six"/>
+            <input onclick="setOptionNum('6')" type="radio" th:field= "*{options}" name="option" id="six" value="six"/>
             <label for="six">6</label>
         </div>
         <div>
-            <input onclick="setOptionNum('7')" type="radio" th:field = "*{options}" name="option" id="seven" value="seven"/>
+            <input onclick="setOptionNum('7')" type="radio" th:field= "*{options}" name="option" id="seven" value="seven"/>
             <label for="seven">7</label>
         </div>
         <div>
-            <input onclick="setOptionNum('8')" type="radio" th:field = "*{options}" name="option" id="eight" value="eight"/>
+            <input onclick="setOptionNum('8')" type="radio" th:field= "*{options}" name="option" id="eight" value="eight"/>
             <label for="eight">8</label>
         </div>
 
