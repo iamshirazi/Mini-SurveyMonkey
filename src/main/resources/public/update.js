@@ -115,7 +115,7 @@ function setOptionNum(val) {
     }
 }
 
-// RETREIVES THE DATA FROM THE FORM AND OPENS A NEW PAGE
+// RETRIEVES THE DATA FROM THE FORM AND OPENS A NEW PAGE
 function postData() {
     var val = document.getElementById("form").value;
 

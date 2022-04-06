@@ -25,34 +25,66 @@ public class Question {
         this.options = options;
     }
 
+    /**
+     * sets ID of question.
+     * @param id Long
+     */
     public void setID(Long id) {
         this.questionID = id;
     }
 
+    /**
+     * returns question id.
+     * @return Long
+     */
     public Long getID() {
         return this.questionID;
     }
 
+    /**
+     * Returns question
+     * @return String
+     */
     public String getQuestion() {
         return this.question;
     }
 
+    /**
+     * Sets question.
+     * @param question String
+     */
     public void setQuestion(String question) {
         this.question = question;
     }
 
+    /**
+     * Sets the type of question. Textbox, radio button, or check box.
+     * @param questionType String
+     */
     public void setQuestionType(String questionType) {
         this.questionType = questionType;
     }
 
+    /**
+     * Returns the specific type of a question.
+     * @return String
+     */
     public String getQuestionType() {
         return this.questionType;
     }
 
+    /**
+     * Sets the options of a question.
+     * @param options String
+     */
     public void setOptions(String options) {
         this.options = options;
     }
 
+    /**
+     * Return options of a question.
+     * @return String
+     */
     public String getOptions() {
         return this.options;
     }

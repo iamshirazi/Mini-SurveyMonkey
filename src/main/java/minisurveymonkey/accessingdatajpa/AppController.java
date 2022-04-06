@@ -18,12 +18,18 @@ public class AppController {
         this.service = service;
     }
 
+    /*
+     * Shows the completed form.
+     */
     @GetMapping("/questions")
     public String showForm(Model model) {
         model.addAttribute("questions", new Question());
         return "questions";
     }
 
+    /*
+     * Lists all questions saved to the repository.
+     */
     @GetMapping("/questions/show")
     public List<Question> listAll() {
         return service.findAll();
