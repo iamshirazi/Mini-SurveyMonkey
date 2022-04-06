@@ -1,3 +1,4 @@
+
 function addItem() {
     var ordlist = document.getElementById('destination');
     var quest = document.getElementById('quest');
@@ -107,3 +108,29 @@ function postData() {
 
         w.document.write(tbl);
 }
+
+//function to create a survey
+function createSurvey() {//was trying if this would work
+    let survey = {
+        "title": "",
+        "questions": []
+    };
+    survey["title"] = document.getElementById("title");
+    //adding the questions to the survey is missing
+    let surveyView = JSON.stringify(survey)
+    $.ajax({
+        type: "POST",
+        url: "/addSurvey",
+        contentType: "application/json; charset=utf-8",
+        data: surveyView,
+        dataType: 'json',
+    });
+}
+
+$(document).ready(() => {//Remember to delete,was trying if it will work
+   document.getElementById("addQuestion").click(() => {
+            createSurvey();
+    });
+});
+
+

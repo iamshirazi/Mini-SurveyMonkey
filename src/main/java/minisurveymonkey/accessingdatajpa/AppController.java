@@ -20,35 +20,29 @@ public class AppController {
     @Autowired
     SurveyRepository surveyRepository;
 
+    //View to create a survey
     @GetMapping ("/surveyCreation")
     public String createView() {return "creationView";}
 
-//    @RequestMapping("/surveyView")
-//    public String surveyView(@RequestParam("title") String title, Model model){
-//        Iterable<Question> questions = questionRepository.findAll();
-//        Survey survey = new Survey();
-//        for(Question q: questions){
-//            if(q.get)
-//            survey.addQuestions(q);
-//        }
-//        model.addAttribute("Survey", survey.getSurvey());
-//        return "surveyView";
-//    }
-
-//    @GetMapping("/surveyView")
-//    public String createSurvey(@RequestParam("title") String title, Model model){
-//        model.addAttribute("title",title);
-//        surveyRepository.save()
-//        return "questions";
-//    }
+    //Controller to add survey
+    @GetMapping("/addSurvey")
+    public Survey addSurvey(@RequestBody Survey survey, Model model){
+        Survey s = new Survey(survey.getTitle());
+        surveyRepository.save(s);
+        model.addAttribute("survey",survey);
+        return survey;
+    }
 
     public AppController(QuestionService service) {
         this.service = service;
     }
 
     @GetMapping("/questions")
-    public String showForm(Model model) {
+    public String showForm(@RequestParam(value = "title", defaultValue = "randomSurvey") String title, Model model) {
         model.addAttribute("questions", new Question());
+        model.addAttribute("title", title);
+        Survey survey = new Survey(title);
+        surveyRepository.save(survey);
         return "questions";
     }
 
@@ -61,7 +55,7 @@ public class AppController {
     @PostMapping(value = "/questions",
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
             produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public String newQuestion(Question question, Model model) {
+    public String newQuestion( Question question, Model model) {
         service.save(question);
         model.addAttribute("questions", question);
         return "questions";

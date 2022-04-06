@@ -10,6 +10,8 @@
 
     <h2>Mini-SurveyMonkey</h2>
 
+    <h3 class="card-title">Survey: <span id="title" th:text=" ${title}"></span></h3>
+
     <ol id="destination">
 
     </ol>
@@ -85,6 +87,7 @@
         </div>
 
         <p><input onclick="postData()" type="submit" value="Add Question"/></p>
+<!--        <p><input type="submit" id = "addQuestion" value="Add Question"/></p>-->
     </form>
 </body>
 </html>
