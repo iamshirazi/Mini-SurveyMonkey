@@ -3,6 +3,13 @@ SYSC 4806 Group Project Milestone 1
 
 Mini-Survey Monkey is an application that allows a user to create their own survey. It begins with a page that prompts the user to input the total amount of questions that they will make. Then, for each question, they will be prompted to select the type of question it will be (radio buttons, checkbox, or typed). Once the form is completed, the user will have their survey ready for their own use. 
 
+# What we added in this deliverable:
+- UML Diagrams
+- Documentation
+- Removal of unecessary code
+- Issues on GitHub
+- Kanban on GitHub
+
 # How to use:
 1. Download code
 2. Unzip the downloaded folder
