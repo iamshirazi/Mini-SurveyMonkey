@@ -1,7 +1,10 @@
-
+// VARIABLES
 var numberOfQuestions = 1;
 var options = [];
 
+/* CREATES ENTRIES FOR THE USER TO ENTER THEIR QUESTIONS, BASED
+ * ON THEIR ANSWER (HOW MANY QUESTIONS THEY WANT FOR THEIR SERVEY)
+ */
 function questionNum() {
 
     for (var i = 0; i < numberOfQuestions; i++) {
@@ -26,6 +29,7 @@ function questionNum() {
     sub.setAttribute("type", "submit");
 }
 
+// Creates <p> element that asks how many options there are for their question
 function createStuff() {
     var tag = document.createElement('p');
     var text = document.createTextNode('How many options are there for your question?');

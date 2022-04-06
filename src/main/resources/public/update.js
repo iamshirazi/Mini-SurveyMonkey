@@ -1,3 +1,6 @@
+/* Stores filled-in question to Question.java and the repository
+ * in AccessingDataJpaApplication.
+ */
 function addItem() {
     var ordlist = document.getElementById('destination');
     var quest = document.getElementById('quest');
@@ -21,10 +24,13 @@ $(function(){
 })
 
 /* --------- FROM PROCESS.JS -------- */
-
+// VARIABLES
 var numberOfQuestions = 1;
 var options = [];
 
+/* CREATES ENTRIES FOR THE USER TO ENTER THEIR QUESTIONS, BASED
+ * ON THEIR ANSWER (HOW MANY QUESTIONS THEY WANT FOR THEIR SERVEY)
+ */
 function questionNum() {
 
     for (var i = 0; i < numberOfQuestions; i++) {
@@ -40,6 +46,7 @@ function questionNum() {
     sub.setAttribute("type", "submit");
 }
 
+// Creates <p> element that asks how many options there are for their question
 function createStuff() {
     var tag = document.createElement('p');
     var text = document.createTextNode('How many options are there for your question?');
@@ -58,6 +65,7 @@ function createStuff() {
 
 }
 
+// Creates entries for the user to enter what options they want.
 function askAgain(num) {
     for (let i = 0; i < num; i++) {
         var p = document.createElement('p');
@@ -69,19 +77,28 @@ function askAgain(num) {
 
     }
 }
-
+// SETS THE NUMBER OF QUESTIONS.
 function setNum(num) {
     numberOfQuestions = num;
 }
 
+// HIDES THE "OPTIONS" SECTION IF THE USER CHOOSES A TEXT QUESTION.
 function hide() {
     document.getElementById('options').style.display = "none";
 }
 
+/* UNHIDES THE "OPTIONS" SECTION IF USER CHOOSES A RADIO BUTTONS QUESTION
+ * OR CHECKBOX QUESTION.
+ */
 function unHide() {
     document.getElementById('options').style.display = "block";
 }
 
+/* SETS THE NUMBER OF OPTIONS TO CHOOSE FROM.
+ * EXAMPLE... 3 OPTIONS IN A "FAVOURITE FOOD" RADIO BUTTON QUESTION: PIZZA,
+ * BUTTER CHICKEN, OR FAJITAS.
+ * PRINTS OUT A NUMBER OF OPTIONS FOR THE USER TO CUSTOMISE.
+ */
 function setOptionNum(val) {
     var num = parseInt(val);
     console.log(num);
@@ -98,6 +115,7 @@ function setOptionNum(val) {
     }
 }
 
+// RETREIVES THE DATA FROM THE FORM AND OPENS A NEW PAGE
 function postData() {
     var val = document.getElementById("form").value;
 
