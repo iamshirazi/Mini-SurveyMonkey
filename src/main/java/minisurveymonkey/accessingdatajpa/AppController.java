@@ -14,6 +14,34 @@ public class AppController {
     @Autowired
     private final QuestionService service;
 
+    @Autowired
+    QuestionRepository questionRepository;
+
+    @Autowired
+    SurveyRepository surveyRepository;
+
+    @GetMapping ("/surveyCreation")
+    public String createView() {return "creationView";}
+
+//    @RequestMapping("/surveyView")
+//    public String surveyView(@RequestParam("title") String title, Model model){
+//        Iterable<Question> questions = questionRepository.findAll();
+//        Survey survey = new Survey();
+//        for(Question q: questions){
+//            if(q.get)
+//            survey.addQuestions(q);
+//        }
+//        model.addAttribute("Survey", survey.getSurvey());
+//        return "surveyView";
+//    }
+
+//    @GetMapping("/surveyView")
+//    public String createSurvey(@RequestParam("title") String title, Model model){
+//        model.addAttribute("title",title);
+//        surveyRepository.save()
+//        return "questions";
+//    }
+
     public AppController(QuestionService service) {
         this.service = service;
     }
@@ -23,6 +51,7 @@ public class AppController {
         model.addAttribute("questions", new Question());
         return "questions";
     }
+
 
     @GetMapping("/questions/show")
     public List<Question> listAll() {

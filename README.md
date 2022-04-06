@@ -1,7 +1,7 @@
 # Mini-SurveyMonkey
 SYSC 4806 Group Project Milestone 1
 
-Mini-Survey Monkey is an application that allows a user to create their own survey. It begins with a page that prompts the user to input the total amount of questions that they will make. Then, for each question, they will be prompted to select the type of question it will be (radio buttons, checkbox, or typed). Once the form is completed, the user will have their survey ready for their own use. 
+Mini-minisurveymonkey.accessingdatajpa.Survey Monkey is an application that allows a user to create their own survey. It begins with a page that prompts the user to input the total amount of questions that they will make. Then, for each question, they will be prompted to select the type of question it will be (radio buttons, checkbox, or typed). Once the form is completed, the user will have their survey ready for their own use. 
 
 # How to use:
 1. Download code

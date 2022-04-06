@@ -53,4 +53,13 @@ public class AccessingDataJpaApplication {
         };
     }
 
+//    @Bean
+//    public CommandLineRunner demoSurveyRepository(Survey repository){
+//        return (args) -> {
+//
+//        };
+//    }
+
+
+
 }
